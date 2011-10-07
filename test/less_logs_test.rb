@@ -1,9 +1,11 @@
 require 'test/unit'
+require "../lib/less_logs"
 
-class LessLogsTest
-   < Test::Unit::TestCase
-  # Replace this with your real tests.
-  def test_this_plugin
-    flunk
-  end
+class LessLogsTest < Test::Unit::TestCase
+   
+   def test_x
+    res = Less::Logs::Event.create {}
+    assert_equal "x", res.parsed_repsonse
+   end
+   
 end

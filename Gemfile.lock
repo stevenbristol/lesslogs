@@ -1,0 +1,18 @@
+PATH
+  remote: .
+  specs:
+    less_logs (0.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    crack (0.1.8)
+    httparty (0.7.8)
+      crack (= 0.1.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  httparty (= 0.7.8)
+  less_logs!

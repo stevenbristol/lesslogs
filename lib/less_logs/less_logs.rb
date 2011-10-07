@@ -20,7 +20,5 @@ class << self
     Config.config
   end
   
-  def Event options = {}
-    
-  end
+end
 end
