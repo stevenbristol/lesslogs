@@ -14,7 +14,7 @@ module Less::Logs
         Less::Logs.config.password
       end
       def url
-        "http://localhost:3000/"
+         Less::Logs.config.url
       end
       def t
         p Less::Logs.config

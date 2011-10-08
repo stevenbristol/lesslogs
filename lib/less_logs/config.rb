@@ -11,12 +11,16 @@ module Less::Logs::Config
   end
 
   class Configuration
-   attr_accessor :debug, :api_key, :password
-    #include ActiveSupport::Configurable
+   attr_accessor :debug, :api_key, :password, :local_dev
     def initialize
-      debug = false
-      api_key = ""
-      password = ""
+      @debug = false
+      @api_key = ""
+      @password = ""
+      @local_dev = false
+    end
+    
+    def url
+      local_dev ? "http://localhost:3000/" : "http://lesslogs.com/"
     end
   end
 
@@ -24,5 +28,6 @@ module Less::Logs::Config
     config.debug = false
     config.api_key = ""
     config.password = ""
+    config.local_dev = false
   end
 end
