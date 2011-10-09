@@ -12,13 +12,6 @@ module LessLogs::Config
 
   class Configuration
    attr_accessor :debug, :api_key, :password, :local_dev, :log_dir
-    # def initialize
-    #   @debug = false
-    #   @api_key = ""
-    #   @password = ""
-    #   @local_dev = false
-    #   @log_dir = ""
-    # end
     
     def url
       local_dev ? "http://localhost:3000/" : "http://lesslogs.com/"
