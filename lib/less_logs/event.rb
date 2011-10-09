@@ -1,6 +1,6 @@
 
 require 'httparty'
-module Less::Logs
+module LessLogs
   class Event   
     include HTTParty
     #debug_output $stderr
@@ -8,21 +8,22 @@ module Less::Logs
   
     class << self
       def user_name
-        Less::Logs.config.api_key
+        Log.config.api_key
       end
       def password
-        Less::Logs.config.password
+        Log.config.password
       end
       def url
-         Less::Logs.config.url
-      end
-      def t
-        p Less::Logs.config
+         Log.config.url
       end
     
       def create params
+        return if user_name == '' || password == ''
+        Log.logger.debug Log.config
         basic_auth user_name, password
-        post "#{url}events.json", :body => {:event => params}
+        res = post "#{url}events.json", :body => {:event => params}
+        Log.failure.fatal(params.to_yaml) unless res && res.code == 200
+        res
       end
     end
   end

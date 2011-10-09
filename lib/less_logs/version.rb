@@ -1,5 +1,3 @@
-module Less
-  module Logs
+module LessLogs
     VERSION = "0.1"
-  end
 end

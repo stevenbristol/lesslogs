@@ -15,12 +15,13 @@ Gem::Specification.new do |gem|
                         "lib/less_logs/event.rb", 
                         "lib/less_logs/less_logs.rb", 
                         "lib/less_logs/version.rb", 
+                        "lib/less_logs/log_factory.rb", 
                         "lib/less_logs.rb", 
                         "lib/railtie.rb"
                       ] 
   #gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "less_logs"
   gem.require_paths = ["lib"]
-  gem.version       = Less::Logs::VERSION
+  gem.version       = LessLogs::VERSION
   gem.add_dependency('httparty', '0.7.8')
 end
